@@ -21,10 +21,6 @@ module LoremIpsumAmet
 
       alias text lorem_ipsum
 
-      def full
-        raw_text
-      end
-
       def paragraphs
         raw_text.split("\n")
       end

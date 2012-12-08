@@ -91,10 +91,4 @@ describe LoremIpsumAmet::Base do
     end
   end
 
-  describe '.full' do
-    it 'returns the full text' do
-      expect(subject.full).to eq(raw_text)
-    end
-  end
-
 end
