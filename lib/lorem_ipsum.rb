@@ -6,7 +6,7 @@ require_relative 'lorem_ipsum/base'
 
 require 'pry'
 
-class LoremIpsum < LoremIpsumAmet::Base; end
+LoremIpsum = LoremIpsumAmet::Base.new
 
 require_relative 'lorem_ipsum/rails/railtie' if defined?(Rails::Railtie)
 

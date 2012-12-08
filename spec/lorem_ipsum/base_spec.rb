@@ -2,8 +2,6 @@ require 'spec_helper'
 
 describe LoremIpsumAmet::Base do
 
-  subject { LoremIpsumAmet::Base }
-
   let(:first_paragraph) do
     %Q(Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam cursus. Morbi ut mi. Nullam enim leo, egestas id, condimentum at, laoreet mattis, massa. Sed eleifend nonummy diam. Praesent mauris ante, elementum et, bibendum at, posuere sit amet, nibh. Duis tincidunt lectus quis dui viverra vestibulum. Suspendisse vulputate aliquam dui. Nulla elementum dui ut augue. Aliquam vehicula mi at mauris. Maecenas placerat, nisl at consequat rhoncus, sem nunc gravida justo, quis eleifend arcu velit quis lacus. Morbi magna magna, tincidunt a, mattis non, imperdiet vitae, tellus. Sed odio est, auctor ac, sollicitudin in, consequat vitae, orci. Fusce id felis. Vivamus sollicitudin metus eget eros.)
   end
@@ -104,6 +102,16 @@ describe LoremIpsumAmet::Base do
 
         expect(subject.lorem_ipsum(words: words, join: "\r\n")).to eq(seven_paragraphs)
       end
+    end
+
+    describe 'text format' do
+
+      it 'returns title cased text' do
+        title_cased = 'Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit.'
+
+        expect(subject.lorem_ipsum(words: 8, format: :title_case)).to eq(title_cased)
+      end
+
     end
 
   end
