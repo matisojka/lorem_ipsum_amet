@@ -13,7 +13,7 @@ describe LoremIpsumAmet::Base do
   end
 
   let(:raw_text) { LoremIpsumAmet::Text.raw }
-  let(:long_text) { [raw_text, raw_text].join("\n")[0..6000] }
+  let(:long_text) { [raw_text, raw_text].join("\n")[0...6000] }
 
 
   describe '.lorem_ipsum' do
@@ -24,11 +24,31 @@ describe LoremIpsumAmet::Base do
     describe 'characters' do
 
       it 'returns a given amount of characters' do
-        expect(subject.lorem_ipsum(15)).to eq(first_paragraph[0..15])
+        expect(subject.lorem_ipsum(15)).to eq(first_paragraph[0...15])
       end
 
       it 'returns a given amount of characters (more characters than raw text length)' do
         expect(subject.lorem_ipsum(6000)).to eq(long_text)
+      end
+
+      it 'returns a given amount of characters (alternative syntax)' do
+        expect(subject.lorem_ipsum(characters: 20)).to eq(first_paragraph[0...20])
+      end
+
+      describe 'join element' do
+
+        it 'returns paragraphs separated by the given join element' do
+          two_paragraphs = [first_paragraph, second_paragraph].join("\r\n")
+
+          expect(subject.lorem_ipsum(two_paragraphs.length, join: "\r\n")).to eq(two_paragraphs)
+        end
+
+        it 'returns paragraphs separated by <br /> if the html option is set to true' do
+          two_paragraphs = [first_paragraph, second_paragraph].join('<br />')
+
+          expect(subject.lorem_ipsum(two_paragraphs.length, html: true)).to eq(two_paragraphs)
+        end
+
       end
 
     end
@@ -48,9 +68,9 @@ describe LoremIpsumAmet::Base do
       describe 'join element' do
 
         it 'returns paragraphs separated by the given join element' do
-          two_paragraphs = [first_paragraph, second_paragraph].join('\r\n')
+          two_paragraphs = [first_paragraph, second_paragraph].join("\r\n")
 
-          expect(subject.lorem_ipsum(paragraphs: 2, join: '\r\n')).to eq(two_paragraphs)
+          expect(subject.lorem_ipsum(paragraphs: 2, join: "\r\n")).to eq(two_paragraphs)
         end
 
         it 'returns paragraphs separated by <br /> if the html option is set to true' do

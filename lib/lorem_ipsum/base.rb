@@ -4,16 +4,15 @@ module LoremIpsumAmet
     class << self
 
       # cp: character or paragraphs
-      def lorem_ipsum(cp = nil)
-        if cp.is_a? Fixnum
-          lorem_ipsum_characters(cp)
-        elsif cp.is_a?(Hash) && cp.has_key?(:paragraphs)
-          join_element = if cp[:join].nil? && cp[:html]
-                           '<br />'
-                         else
-                           cp[:join]
-                         end
+      def lorem_ipsum(cp = nil, options = {})
+        cp = { characters: cp } unless cp.respond_to?(:merge)
+        cp.merge!(options)
 
+        join_element = cp[:join].nil? && cp[:html] ? '<br />' : cp[:join]
+
+        if cp[:characters]
+          lorem_ipsum_characters(cp[:characters], join_element)
+        elsif cp[:paragraphs]
           lorem_ipsum_paragraphs(cp[:paragraphs], join_element)
         else
           paragraphs.first
@@ -36,12 +35,15 @@ module LoremIpsumAmet
         Text.raw
       end
 
-      def lorem_ipsum_characters(characters)
-        times_to_repeat = (characters / raw_text.length) + 1
+      def lorem_ipsum_characters(characters, join_element = "\n")
+        join_element = "\n" if join_element.nil?
 
-        text = ([raw_text] * times_to_repeat).join("\n")
+        base_text = paragraphs.join(join_element)
+        times_to_repeat = (characters / base_text.length) + 1
 
-        text[0..characters]
+        text = ([base_text] * times_to_repeat).join(join_element)
+
+        text[0...characters]
       end
 
       def lorem_ipsum_paragraphs(paragraphs, join_element = "\n")
