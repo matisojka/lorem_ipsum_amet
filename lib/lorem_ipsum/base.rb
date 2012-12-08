@@ -14,6 +14,8 @@ module LoremIpsumAmet
           Character.new(self, cp[:characters], join_element).text
         elsif cp[:paragraphs]
           Paragraph.new(self, cp[:paragraphs], join_element).text
+        elsif cp[:words]
+          Word.new(self, cp[:words], join_element).text
         else
           paragraphs.first
         end

@@ -83,6 +83,29 @@ describe LoremIpsumAmet::Base do
 
     end
 
+    describe 'words' do
+
+      it 'returns a given amount of words' do
+        eight_words = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
+
+        expect(subject.lorem_ipsum(words: 8)).to eq(eight_words)
+      end
+
+      it 'returns a given amount of words (more than in the whole text)' do
+        seven_paragraphs = [raw_text, first_paragraph].join("\n")
+        words = seven_paragraphs.split.size
+
+        expect(subject.lorem_ipsum(words: words)).to eq(seven_paragraphs)
+      end
+
+      it 'returns a given amount of words separated by \r\n' do
+        seven_paragraphs = [raw_text, first_paragraph].join("\n").gsub("\n", "\r\n")
+        words = seven_paragraphs.split.size
+
+        expect(subject.lorem_ipsum(words: words, join: "\r\n")).to eq(seven_paragraphs)
+      end
+    end
+
   end
 
   describe '.text' do
