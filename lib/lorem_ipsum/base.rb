@@ -3,11 +3,18 @@ module LoremIpsumAmet
 
     class << self
 
-      def lorem_ipsum(characters_or_paragraphs = nil)
-        if characters_or_paragraphs.is_a? Fixnum
-          lorem_ipsum_characters(characters_or_paragraphs)
-        elsif characters_or_paragraphs.is_a?(Hash) && characters_or_paragraphs.has_key?(:paragraphs)
-          lorem_ipsum_paragraphs(characters_or_paragraphs[:paragraphs])
+      # cp: character or paragraphs
+      def lorem_ipsum(cp = nil)
+        if cp.is_a? Fixnum
+          lorem_ipsum_characters(cp)
+        elsif cp.is_a?(Hash) && cp.has_key?(:paragraphs)
+          join_element = if cp[:join].nil? && cp[:html]
+                           '<br />'
+                         else
+                           cp[:join]
+                         end
+
+          lorem_ipsum_paragraphs(cp[:paragraphs], join_element)
         else
           paragraphs.first
         end
@@ -37,10 +44,11 @@ module LoremIpsumAmet
         text[0..characters]
       end
 
-      def lorem_ipsum_paragraphs(paragraphs)
+      def lorem_ipsum_paragraphs(paragraphs, join_element = "\n")
+        join_element = "\n" if join_element.nil?
         times_to_repeat = (paragraphs / self.paragraphs.size) + 1
 
-        ([self.paragraphs] * times_to_repeat).flatten[0...paragraphs].join("\n")
+        ([self.paragraphs] * times_to_repeat).flatten[0...paragraphs].join(join_element)
       end
 
     end

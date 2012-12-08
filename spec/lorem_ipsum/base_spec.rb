@@ -21,22 +21,46 @@ describe LoremIpsumAmet::Base do
       expect(subject.lorem_ipsum).to eq(first_paragraph)
     end
 
-    it 'returns a given amount of characters' do
-      expect(subject.lorem_ipsum(15)).to eq(first_paragraph[0..15])
+    describe 'characters' do
+
+      it 'returns a given amount of characters' do
+        expect(subject.lorem_ipsum(15)).to eq(first_paragraph[0..15])
+      end
+
+      it 'returns a given amount of characters (more characters than raw text length)' do
+        expect(subject.lorem_ipsum(6000)).to eq(long_text)
+      end
+
     end
 
-    it 'returns a given amount of characters (more characters than raw text length)' do
-      expect(subject.lorem_ipsum(6000)).to eq(long_text)
-    end
+    describe 'paragraphs' do
 
-    it 'returns a given amount of paragraphs' do
-      two_paragraphs = [first_paragraph, second_paragraph].join("\n")
-      expect(subject.lorem_ipsum(paragraphs: 2)).to eq(two_paragraphs)
-    end
+      it 'returns a given amount of paragraphs' do
+        two_paragraphs = [first_paragraph, second_paragraph].join("\n")
+        expect(subject.lorem_ipsum(paragraphs: 2)).to eq(two_paragraphs)
+      end
 
-    it 'returns a given amount of paragraphs (more paragraphs than in raw text)' do
-      seven_paragraphs = [raw_text, first_paragraph].join("\n")
-      expect(subject.lorem_ipsum(paragraphs: 7)).to eq(seven_paragraphs)
+      it 'returns a given amount of paragraphs (more paragraphs than in raw text)' do
+        seven_paragraphs = [raw_text, first_paragraph].join("\n")
+        expect(subject.lorem_ipsum(paragraphs: 7)).to eq(seven_paragraphs)
+      end
+
+      describe 'join element' do
+
+        it 'returns paragraphs separated by the given join element' do
+          two_paragraphs = [first_paragraph, second_paragraph].join('\r\n')
+
+          expect(subject.lorem_ipsum(paragraphs: 2, join: '\r\n')).to eq(two_paragraphs)
+        end
+
+        it 'returns paragraphs separated by <br /> if the html option is set to true' do
+          two_paragraphs = [first_paragraph, second_paragraph].join('<br />')
+
+          expect(subject.lorem_ipsum(paragraphs: 2, html: true)).to eq(two_paragraphs)
+        end
+
+      end
+
     end
 
   end
