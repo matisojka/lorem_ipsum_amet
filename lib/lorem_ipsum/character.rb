@@ -26,7 +26,7 @@ module LoremIpsumAmet
     end
 
     def joined_text
-      ([base_text] * times_to_repeat).join(@join_element)
+      ([base_text] * times_to_repeat).join(join_element)
     end
 
   end
