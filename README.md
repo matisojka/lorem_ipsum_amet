@@ -1,4 +1,4 @@
 lorem-ipsum
 ===========
 
-Dummy text generator with tons of configuration options
+Blind text generator with tons of configuration options
