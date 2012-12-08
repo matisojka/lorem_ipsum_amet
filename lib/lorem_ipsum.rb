@@ -5,3 +5,5 @@ require 'pry'
 
 class LoremIpsum < LoremIpsumAmet::Base; end
 
+require_relative 'lorem_ipsum/rails/railtie' if defined?(Rails::Railtie)
+
