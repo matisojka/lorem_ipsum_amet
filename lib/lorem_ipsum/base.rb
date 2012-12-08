@@ -29,8 +29,12 @@ module LoremIpsumAmet
 
     def formatted_text
       case @params[:format]
-      when :title_case
+      when :title_case, :titlecase
         raw_text.gsub(/\w+/) { |word| word.capitalize }
+      when :upcase, :uppercase
+        raw_text.upcase
+      when :downcase, :lowercase
+        raw_text.downcase
       else
         raw_text
       end

@@ -110,6 +110,21 @@ describe LoremIpsumAmet::Base do
         title_cased = 'Lorem Ipsum Dolor Sit Amet, Consectetuer Adipiscing Elit.'
 
         expect(subject.lorem_ipsum(words: 8, format: :title_case)).to eq(title_cased)
+        expect(subject.lorem_ipsum(words: 8, format: :titlecase)).to eq(title_cased)
+      end
+
+      it 'returns upcased text' do
+        upcased = 'LOREM IPSUM DOLOR SIT AMET, CONSECTETUER ADIPISCING ELIT.'
+
+        expect(subject.lorem_ipsum(words: 8, format: :uppercase)).to eq(upcased)
+        expect(subject.lorem_ipsum(words: 8, format: :upcase)).to eq(upcased)
+      end
+
+      it 'returns downcased text' do
+        downcased = 'lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
+
+        expect(subject.lorem_ipsum(words: 8, format: :lowercase)).to eq(downcased)
+        expect(subject.lorem_ipsum(words: 8, format: :downcase)).to eq(downcased)
       end
 
     end
