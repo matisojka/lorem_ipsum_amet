@@ -1,19 +1,19 @@
 module LoremIpsumAmet
   class Base
 
-    # cp: character or paragraphs
-    def lorem_ipsum(cp = nil, options = {})
-      cp = { characters: cp } unless cp.respond_to?(:merge)
-      @cp = cp.merge!(options)
+    # cpw: characters, paragraphs or words
+    def lorem_ipsum(cpw = nil, options = {})
+      cpw = { characters: cpw } unless cpw.respond_to?(:merge)
+      @params = cpw.merge!(options)
 
-      join_element = cp[:join].nil? && cp.delete(:html) ? '<br />' : cp.delete(:join)
+      join_element = @params[:join].nil? && @params.delete(:html) ? '<br />' : @params.delete(:join)
 
-      if cp[:characters]
-        Character.new(self, cp.delete(:characters), join_element).text
-      elsif cp[:paragraphs]
-        Paragraph.new(self, cp.delete(:paragraphs), join_element).text
-      elsif cp[:words]
-        Word.new(self, cp.delete(:words), join_element).text
+      if @params[:characters]
+        Character.new(self, @params.delete(:characters), join_element).text
+      elsif @params[:paragraphs]
+        Paragraph.new(self, @params.delete(:paragraphs), join_element).text
+      elsif @params[:words]
+        Word.new(self, @params.delete(:words), join_element).text
       else
         paragraphs.first
       end
@@ -28,7 +28,7 @@ module LoremIpsumAmet
     private
 
     def formatted_text
-      case @cp[:format]
+      case @params[:format]
       when :title_case
         raw_text.gsub(/\w+/) { |word| word.capitalize }
       else
