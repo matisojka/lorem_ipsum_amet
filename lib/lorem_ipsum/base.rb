@@ -11,7 +11,7 @@ module LoremIpsumAmet
         join_element = cp[:join].nil? && cp[:html] ? '<br />' : cp[:join]
 
         if cp[:characters]
-          lorem_ipsum_characters(cp[:characters], join_element)
+          Character.new(self, cp[:characters], join_element).text
         elsif cp[:paragraphs]
           Paragraph.new(self, cp[:paragraphs], join_element).text
         else
@@ -33,10 +33,6 @@ module LoremIpsumAmet
 
       def raw_text
         Text.raw
-      end
-
-      def lorem_ipsum_characters(characters, join_element = "\n")
-        Character.new(self, characters, join_element).text
       end
 
     end
