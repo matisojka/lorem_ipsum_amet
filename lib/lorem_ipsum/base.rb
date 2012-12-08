@@ -13,7 +13,7 @@ module LoremIpsumAmet
         if cp[:characters]
           lorem_ipsum_characters(cp[:characters], join_element)
         elsif cp[:paragraphs]
-          lorem_ipsum_paragraphs(cp[:paragraphs], join_element)
+          Paragraph.new(self, cp[:paragraphs], join_element).text
         else
           paragraphs.first
         end
@@ -37,13 +37,6 @@ module LoremIpsumAmet
 
       def lorem_ipsum_characters(characters, join_element = "\n")
         Character.new(self, characters, join_element).text
-      end
-
-      def lorem_ipsum_paragraphs(paragraphs, join_element = "\n")
-        join_element = "\n" if join_element.nil?
-        times_to_repeat = (paragraphs / self.paragraphs.size) + 1
-
-        ([self.paragraphs] * times_to_repeat).flatten[0...paragraphs].join(join_element)
       end
 
     end
