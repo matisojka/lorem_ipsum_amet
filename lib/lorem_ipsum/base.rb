@@ -36,14 +36,7 @@ module LoremIpsumAmet
       end
 
       def lorem_ipsum_characters(characters, join_element = "\n")
-        join_element = "\n" if join_element.nil?
-
-        base_text = paragraphs.join(join_element)
-        times_to_repeat = (characters / base_text.length) + 1
-
-        text = ([base_text] * times_to_repeat).join(join_element)
-
-        text[0...characters]
+        Character.new(self, characters, join_element).text
       end
 
       def lorem_ipsum_paragraphs(paragraphs, join_element = "\n")
