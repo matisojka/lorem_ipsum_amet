@@ -1,4 +1,123 @@
-lorem-ipsum
+# Lorem Ipsum Amet - blind text generator
 ===========
 
-Blind text generator with tons of configuration options
+** Lorem Ipsum Amet ** provides a simple yet powerful DSL for generating blind text in your projects.
+
+## Installation
+
+Add it to your Gemfile:
+
+`gem 'lorem-ipsum-amet'`
+
+And run:
+
+`bundle install`
+
+to install it.
+
+## Usage
+
+The gem provides all of its features through the namespace LoremIpsum. If you are using it in a Rails project, refer to the next section.
+
+### Examples
+
+#### Get some lorem ipsum!
+
+`LoremIpsum.lorem_ipsum`
+
+#### Characters
+
+Get 100 characters:
+
+`LoremIpsum.lorem_ipsum(100)` or
+`LoremIpsum.lorem_ipsum(characters: 100)`
+
+#### Paragraph
+
+Get 3 paragraphs:
+
+`LoremIpsum.lorem_ipsum(paragraphs: 3)`
+
+#### Words
+
+Get 200 words:
+
+`LoremIpsum.lorem_ipsum(words: 3)`
+
+#### HTML
+
+Get 5 paragraphs with `<br />` breaks instead of `\n`:
+
+`LoremIpsum.lorem_ipsum(paragraphs: 5, html: true)`
+
+#### Custom paragraph join
+
+Get 3 paragraphs joined by `\r\n`:
+
+`LoremIpsum.lorem_ipsum(paragraphs: 3, join: "\r\n")`
+
+#### Text formatting
+
+Use the `format` parameter.
+
+Title case:
+
+`LoremIpsum.lorem_ipsum(10, format: :title_case)`
+
+Upcase:
+
+`LoremIpsum.lorem_ipsum(10, format: :upcase)`
+
+Downcase:
+
+`LoremIpsum.lorem_ipsum(10, format: :downcase)`
+
+#### Different text lengths
+
+There are also some shortcuts for getting different text lengths.
+
+Short:
+
+`LoremIpsum.short`
+
+Medium:
+
+`LoremIpsum.medium`
+`LoremIpsum.medium("<br />")`
+
+Long:
+
+`LoremIpsum.long`
+`LoremIpsum.long("<br />")`
+
+Very long:
+
+`LoremIpsum.very_long`
+`LoremIpsum.very_long("<br />")`
+
+### Rails integration
+
+If you are using this gem in a Rails project, you can access the helper method `lorem_ipsum` to get exactly the same functionality as described in the examples before.
+
+The html option is activated by default.
+
+ERB:
+
+`<%= text_area_tag 'placeholder', lorem_ipsum %>`
+
+HAML:
+
+`%p= lorem_ipsum(paragraphs: 5)`
+
+## Bug reports and contributions
+
+If you discover any bugs or need a feature, feel free to create an issue on GitHub. I also encourage you to help even more by forking and sending a pull request.
+
+## Maintainers
+
+* Mateusz Sójka (https://github.com/yagooar)
+
+## License
+
+MIT License.
+
