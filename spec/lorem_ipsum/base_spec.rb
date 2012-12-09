@@ -128,6 +128,45 @@ describe LoremIpsumAmet::Base do
 
     end
 
+    describe '#short' do
+
+      it 'returns a short fragment' do
+        short_fragment = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
+
+        expect(subject.short).to eq(short_fragment)
+      end
+
+    end
+
+    describe '#medium' do
+
+      it 'returns a medium long fragment' do
+        medium_fragment = [first_paragraph, second_paragraph].join("\n")
+
+        expect(subject.medium).to eq(medium_fragment)
+      end
+
+    end
+
+    describe '#long' do
+
+      it 'returns a long fragment' do
+        long_fragment = [raw_text, first_paragraph, second_paragraph].join("\n")
+
+        expect(subject.long).to eq(long_fragment)
+      end
+
+    end
+
+    describe '#very_long' do
+
+      it 'returns a very long fragment' do
+        very_long_fragment = ([raw_text] * 4).join("\n")
+
+        expect(subject.very_long).to eq(very_long_fragment)
+      end
+    end
+
   end
 
   describe '.text' do
