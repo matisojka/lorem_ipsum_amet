@@ -1,7 +1,7 @@
 # Lorem Ipsum Amet - blind text generator
 ===========
 
-** Lorem Ipsum Amet ** provides a simple yet powerful DSL for generating blind text in your projects.
+**Lorem Ipsum Amet** provides a simple yet powerful DSL for generating blind text in your projects.
 
 ## Installation
 
@@ -23,7 +23,8 @@ The gem provides all of its features through the namespace LoremIpsum. If you ar
 
 #### Get some lorem ipsum!
 
-`LoremIpsum.lorem_ipsum`
+`LoremIpsum.lorem_ipsum` or
+(alternatively) `LoremIpsum.text`
 
 #### Characters
 
