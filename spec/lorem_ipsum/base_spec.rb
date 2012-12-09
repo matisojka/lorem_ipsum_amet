@@ -13,8 +13,7 @@ describe LoremIpsumAmet::Base do
   let(:raw_text) { LoremIpsumAmet::Text.raw }
   let(:long_text) { [raw_text, raw_text].join("\n")[0...6000] }
 
-
-  describe '.lorem_ipsum' do
+  describe '#lorem_ipsum' do
     it 'returns the first paragraph by default' do
       expect(subject.lorem_ipsum).to eq(first_paragraph)
     end
