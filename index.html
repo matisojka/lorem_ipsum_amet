@@ -31,23 +31,21 @@
         <hr>
 
         <section id="main_content">
-          <h1>Lorem Ipsum Amet</h1>
+          <h2>Installation</h2>
 
-<h2>Blind text generator</h2>
+<h3>With gemfile</h3>
 
-<h3>Installation</h3>
+<p>Add this to your gemfile: <code>gem 'lorem_ipsum_amet'</code></p>
 
-<p>With gemfile</p>
+<p>Then run <code>bundle install</code></p>
 
-<p>Add this to your gemfile: <code>gem 'lorem_ipsum_amet'</code>
-And run <code>bundle install</code></p>
+<h3>Without gemfile</h3>
 
-<p>Without gemfile </p>
+<p>In your shell, execute <code>gem install 'lorem_ipsum_amet'</code></p>
 
-<p>In your shell <code>gem install 'lorem_ipsum_amet'</code>
-And then in your ruby code <code>require 'lorem_ipsum_amet'</code></p>
+<p>And then in your ruby code <code>require 'lorem_ipsum_amet'</code></p>
 
-<h3>Usage</h3>
+<h2>Usage</h2>
 
 <p><code>LoremIpsum.lorem_ipsum</code> - default Lorem Ipsum text</p>
 
@@ -59,7 +57,7 @@ And then in your ruby code <code>require 'lorem_ipsum_amet'</code></p>
 
 <p><code>LoremIpsum.lorem_ipsum(words: 100)</code> - 100 words</p>
 
-<p><code>LoremIpsum.lorem_ipsum(words: 100, html: true)</code> - 100 words, paragraphs joined by <code>&lt;br /&gt;</code></p>
+<p><code>LoremIpsum.lorem_ipsum(words: 100, html: true)</code> - 100 words, paragraphs joined by "<br>"</p>
 
 <p><code>LoremIpsum.lorem_ipsum(50, join: "\r\n")</code> - join paragraph with a custom string</p>
 
@@ -69,15 +67,17 @@ And then in your ruby code <code>require 'lorem_ipsum_amet'</code></p>
 
 <p>... And many more options (check the README)</p>
 
-<h3>Rails</h3>
+<h2>Rails</h2>
 
 <p>Just use "lorem_ipsum" in your views as in the examples above!</p>
 
-<p>ERB:
-<code>&lt;%= text_area_tag 'placeholder', lorem_ipsum %&gt;</code></p>
+<h3>ERB</h3>
 
-<p>HAML:
-<code>%p= lorem_ipsum(paragraphs: 5)</code></p>
+<p><code>&lt;%= text_area_tag 'placeholder', lorem_ipsum %&gt;</code></p>
+
+<h3>HAML</h3>
+
+<p><code>%p= lorem_ipsum(paragraphs: 5)</code></p>
         </section>
 
         <footer>
