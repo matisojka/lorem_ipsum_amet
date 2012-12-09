@@ -2,6 +2,7 @@
 
 require 'rubygems'
 require 'bundler'
+
 begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
@@ -14,13 +15,13 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = 'lorem-ipsum-amet'
-  gem.homepage = 'http://github.com/yagooar/lorem-ipsum-amet'
+  gem.name = 'lorem_ipsum_amet'
+  gem.homepage = 'http://github.com/yagooar/lorem_ipsum_amet'
   gem.license = 'MIT'
   gem.summary = %Q{Lorem Ipsum generator}
-  gem.description = %Q{Generate Lorem Ipsum texts with different configurations}
+  gem.description = %Q{Generate blind texts with different configurations}
   gem.email = 'yagooar@gmail.com'
-  gem.authors = ['Mateusz Sójka']
+  gem.authors = ['Mateusz Sojka']
   gem.require_paths = ['lib']
   # dependencies defined in Gemfile
 end
@@ -44,7 +45,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "lorem-ipsum-amet #{version}"
+  rdoc.title = "lorem_ipsum_amet #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
