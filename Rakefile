@@ -14,13 +14,13 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "lorem-ipsum"
-  gem.homepage = "http://github.com/yagooar/lorem-ipsum"
-  gem.license = "MIT"
+  gem.name = 'lorem-ipsum-amet'
+  gem.homepage = 'http://github.com/yagooar/lorem-ipsum-amet'
+  gem.license = 'MIT'
   gem.summary = %Q{Lorem Ipsum generator}
   gem.description = %Q{Generate Lorem Ipsum texts with different configurations}
   gem.email = 'yagooar@gmail.com'
-  gem.authors = ["Mateusz Sójka"]
+  gem.authors = ['Mateusz Sójka']
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -43,7 +43,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "lorem-ipsum #{version}"
+  rdoc.title = "lorem-ipsum-amet #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
