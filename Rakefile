@@ -21,6 +21,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Generate Lorem Ipsum texts with different configurations}
   gem.email = 'yagooar@gmail.com'
   gem.authors = ['Mateusz Sójka']
+  gem.require_paths = ['lib']
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
