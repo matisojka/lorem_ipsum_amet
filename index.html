@@ -37,19 +37,31 @@
 
 <h3>Installation</h3>
 
-<p>With gemfile <code>gem 'lorem_ipsum_amet'</code></p>
+<p>With gemfile</p>
 
-<p>Without gemfile <code>gem install 'lorem_ipsum_amet'</code></p>
+<p>Add this to your gemfile: <code>gem 'lorem_ipsum_amet'</code>
+And run <code>bundle install</code></p>
+
+<p>Without gemfile </p>
+
+<p>In your shell <code>gem install 'lorem_ipsum_amet'</code>
+And then in your ruby code <code>require 'lorem_ipsum_amet'</code></p>
 
 <h3>Usage</h3>
 
 <p><code>LoremIpsum.lorem_ipsum</code> - default Lorem Ipsum text</p>
+
+<p><code>LoremIpsum.text</code> - alias for #lorem_ipsum</p>
 
 <p><code>LoremIpsum.lorem_ipsum(50)</code> - 50 characters</p>
 
 <p><code>LoremIpsum.lorem_ipsum(paragraphs: 4)</code> - 4 paragraphs</p>
 
 <p><code>LoremIpsum.lorem_ipsum(words: 100)</code> - 100 words</p>
+
+<p><code>LoremIpsum.lorem_ipsum(words: 100, html: true)</code> - 100 words, paragraphs joined by <code>&lt;br /&gt;</code></p>
+
+<p><code>LoremIpsum.lorem_ipsum(50, join: "\r\n")</code> - join paragraph with a custom string</p>
 
 <p><code>LoremIpsum.short</code> - a short text</p>
 
