@@ -30,24 +30,24 @@ module LoremIpsumAmet
     end
 
     def short
-      Word.new(self, 8, nil).text
+      lorem_ipsum(words: 8)
     end
 
     def medium(join_element = "\n")
-      Paragraph.new(self, 2, join_element).text
+      lorem_ipsum(paragraphs: 2, join: join_element)
     end
 
     def long(join_element = "\n")
-      Paragraph.new(self, 8, join_element).text
+      lorem_ipsum(paragraphs: 8, join: join_element)
     end
 
     def very_long(join_element = "\n")
-      Paragraph.new(self, 24, join_element).text
+      lorem_ipsum(paragraphs: 24, join: join_element)
     end
 
     # http://goo.gl/m0MMz ;)
     def the_lord_of_the_rings_long(join_element = "\n")
-      Word.new(self, 500000, join_element).text
+      lorem_ipsum(words: 500000, join: join_element)
     end
 
     private
