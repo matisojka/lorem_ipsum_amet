@@ -6,7 +6,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 # SimpleCov.start
 
 require 'rspec'
-require 'lorem_ipsum'
+require 'lorem_ipsum_amet'
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
