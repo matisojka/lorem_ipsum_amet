@@ -7,11 +7,11 @@
 
 Add it to your Gemfile:
 
-`gem 'lorem-ipsum-amet'`
+    gem 'lorem-ipsum-amet'
 
 And run:
 
-`bundle install`
+    bundle install
 
 to install it.
 
@@ -23,62 +23,65 @@ The gem provides all of its features through the namespace LoremIpsum. If you ar
 
 #### Get some lorem ipsum!
 
-`LoremIpsum.lorem_ipsum` or
-(alternatively) `LoremIpsum.text`
+    LoremIpsum.lorem_ipsum
+
+or (alternatively)
+
+    LoremIpsum.text
 
 #### Characters
 
 Get 100 characters:
 
-`LoremIpsum.lorem_ipsum(100)`
+    LoremIpsum.lorem_ipsum(100)
 
-`LoremIpsum.lorem_ipsum(characters: 100)`
+    LoremIpsum.lorem_ipsum(characters: 100)
 
-`LoremIpsum.c(100)`
+    LoremIpsum.c(100)
 
 #### Paragraph
 
 Get 3 paragraphs:
 
-`LoremIpsum.lorem_ipsum(paragraphs: 3)`
+    LoremIpsum.lorem_ipsum(paragraphs: 3)
 
-`LoremIpsum.c(3)`
+    LoremIpsum.c(3)
 
 #### Words
 
 Get 200 words:
 
-`LoremIpsum.lorem_ipsum(words: 3)`
+    LoremIpsum.lorem_ipsum(words: 3)
 
-`LoremIpsum.w(200)`
+    LoremIpsum.w(200)
 
 #### HTML
 
 Get 5 paragraphs with `<br />` breaks instead of `\n`:
 
-`LoremIpsum.lorem_ipsum(paragraphs: 5, html: true)`
+    LoremIpsum.lorem_ipsum(paragraphs: 5, html: true)
 
 #### Custom paragraph join
 
-Get 3 paragraphs joined by `\r\n`:
+Get 3 paragraphs joined by \r\n:
 
-`LoremIpsum.lorem_ipsum(paragraphs: 3, join: "\r\n")`
+    LoremIpsum.lorem_ipsum(paragraphs: 3, join: "\r\n")
 
 #### Text formatting
 
-Use the `format` parameter.
+Use the format parameter.
 
 Title case:
 
-`LoremIpsum.lorem_ipsum(10, format: :title_case)`
+    LoremIpsum.lorem_ipsum(10, format: :title_case)
 
 Upcase:
 
-`LoremIpsum.lorem_ipsum(10, format: :upcase)`
+    LoremIpsum.lorem_ipsum(10, format: :upcase)
 
 Downcase:
 
-`LoremIpsum.lorem_ipsum(10, format: :downcase)`
+    LoremIpsum.lorem_ipsum(10, format: :downcase)
 
 #### Different text lengths
 
@@ -86,36 +89,36 @@ There are also some shortcuts for getting different text lengths.
 
 Short:
 
-`LoremIpsum.short`
+    LoremIpsum.short
 
 Medium:
 
-`LoremIpsum.medium`
-`LoremIpsum.medium("<br />")`
+    LoremIpsum.medium
+    LoremIpsum.medium("<br />")
 
 Long:
 
-`LoremIpsum.long`
-`LoremIpsum.long("<br />")`
+    LoremIpsum.long
+    LoremIpsum.long("<br />")
 
 Very long:
 
-`LoremIpsum.very_long`
-`LoremIpsum.very_long("<br />")`
+    LoremIpsum.very_long
+    LoremIpsum.very_long("<br />")
 
 ### Rails integration
 
-If you are using this gem in a Rails project, you can access the helper method `lorem_ipsum` to get exactly the same functionality as described in the examples before.
+If you are using this gem in a Rails project, you can access the helper method lorem_ipsum to get exactly the same functionality as described in the examples before.
 
 The html option is activated by default.
 
 ERB:
 
-`<%= text_area_tag 'placeholder', lorem_ipsum %>`
+    <%= text_area_tag 'placeholder', lorem_ipsum %>
 
 HAML:
 
-`%p= lorem_ipsum(paragraphs: 5)`
+    %p= lorem_ipsum(paragraphs: 5)
 
 ## Bug reports and contributions
 
