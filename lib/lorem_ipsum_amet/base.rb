@@ -50,6 +50,18 @@ module LoremIpsumAmet
       lorem_ipsum(words: 500000, join: join_element)
     end
 
+    def c(characters, join_element = "\n")
+      lorem_ipsum(characters, join: join_element)
+    end
+
+    def p(paragraphs, join_element = "\n")
+      lorem_ipsum(paragraphs: paragraphs, join: join_element)
+    end
+
+    def w(words, join_element = "\n")
+      lorem_ipsum(words: words, join: join_element)
+    end
+
     private
 
     def formatted_text

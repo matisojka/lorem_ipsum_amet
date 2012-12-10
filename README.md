@@ -30,8 +30,11 @@ The gem provides all of its features through the namespace LoremIpsum. If you ar
 
 Get 100 characters:
 
-`LoremIpsum.lorem_ipsum(100)` or
+`LoremIpsum.lorem_ipsum(100)`
+
 `LoremIpsum.lorem_ipsum(characters: 100)`
+
+`LoremIpsum.c(100)`
 
 #### Paragraph
 
@@ -39,11 +42,15 @@ Get 3 paragraphs:
 
 `LoremIpsum.lorem_ipsum(paragraphs: 3)`
 
+`LoremIpsum.c(3)`
+
 #### Words
 
 Get 200 words:
 
 `LoremIpsum.lorem_ipsum(words: 3)`
+
+`LoremIpsum.w(200)`
 
 #### HTML
 

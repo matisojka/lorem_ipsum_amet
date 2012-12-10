@@ -48,6 +48,20 @@ describe LoremIpsumAmet::Base do
 
       end
 
+      describe '#c' do
+
+        it 'returns the given number of characters' do
+          expect(subject.c(25)).to eq(first_paragraph[0...25])
+        end
+
+        it 'returns the given number of characters with custom join' do
+          two_paragraphs = [first_paragraph, second_paragraph].join("\r\n")
+
+          expect(subject.c(two_paragraphs.length, "\r\n")).to eq(two_paragraphs)
+        end
+
+      end
+
     end
 
     describe 'paragraphs' do
@@ -76,6 +90,23 @@ describe LoremIpsumAmet::Base do
           expect(subject.lorem_ipsum(paragraphs: 2, html: true)).to eq(two_paragraphs)
         end
 
+
+        describe '#p' do
+
+          it 'returns the given number of paragraphs' do
+            two_paragraphs = [first_paragraph, second_paragraph].join("\n")
+
+            expect(subject.p(2)).to eq(two_paragraphs)
+          end
+
+          it 'returns the given number of paragraphs (with custom join)' do
+            two_paragraphs = [first_paragraph, second_paragraph].join("\r\n")
+
+            expect(subject.p(2, "\r\n")).to eq(two_paragraphs)
+          end
+
+        end
+
       end
 
     end
@@ -101,6 +132,24 @@ describe LoremIpsumAmet::Base do
 
         expect(subject.lorem_ipsum(words: words, join: "\r\n")).to eq(seven_paragraphs)
       end
+
+      describe '#w' do
+
+        it 'returns the given amount of words' do
+          eight_words = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
+
+          expect(subject.w(8)).to eq(eight_words)
+        end
+
+        it 'returns a given amount of words separated by \r\n' do
+          seven_paragraphs = [raw_text, first_paragraph].join("\n").gsub("\n", "\r\n")
+          words = seven_paragraphs.split.size
+
+          expect(subject.w(words, "\r\n")).to eq(seven_paragraphs)
+        end
+
+      end
+
     end
 
     describe 'text format' do
@@ -169,10 +218,12 @@ describe LoremIpsumAmet::Base do
 
   end
 
-  describe '.text' do
-    it 'is an alias of .lorem_ipsum' do
+  describe '#text' do
+
+    it 'is an alias of #lorem_ipsum' do
       expect(subject.method(:text)).to eq(subject.method(:lorem_ipsum))
     end
+
   end
 
 end
