@@ -32,6 +32,10 @@ describe LoremIpsumAmet::Base do
         expect(subject.lorem_ipsum(characters: 20)).to eq(first_paragraph[0...20])
       end
 
+      it 'returns a given amount of characters (short syntax)' do
+        expect(subject.lorem_ipsum(c: 20)).to eq(first_paragraph[0...20])
+      end
+
       describe 'join element' do
 
         it 'returns paragraphs separated by the given join element' do
@@ -69,6 +73,11 @@ describe LoremIpsumAmet::Base do
       it 'returns a given amount of paragraphs' do
         two_paragraphs = [first_paragraph, second_paragraph].join("\n")
         expect(subject.lorem_ipsum(paragraphs: 2)).to eq(two_paragraphs)
+      end
+
+      it 'returns a given amount of paragraphs (short syntax)' do
+        two_paragraphs = [first_paragraph, second_paragraph].join("\n")
+        expect(subject.lorem_ipsum(p: 2)).to eq(two_paragraphs)
       end
 
       it 'returns a given amount of paragraphs (more paragraphs than in raw text)' do
@@ -117,6 +126,12 @@ describe LoremIpsumAmet::Base do
         eight_words = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
 
         expect(subject.lorem_ipsum(words: 8)).to eq(eight_words)
+      end
+
+      it 'returns a given amount of words (short syntax)' do
+        eight_words = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
+
+        expect(subject.lorem_ipsum(w: 8)).to eq(eight_words)
       end
 
       it 'returns a given amount of words (more than in the whole text)' do

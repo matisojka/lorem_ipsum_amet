@@ -14,10 +14,16 @@ module LoremIpsumAmet
 
       if params[:characters]
         Character.new(self, params.delete(:characters), join_element).text
+      elsif params[:c]
+        Character.new(self, params.delete(:c), join_element).text
       elsif params[:paragraphs]
         Paragraph.new(self, params.delete(:paragraphs), join_element).text
+      elsif params[:p]
+        Paragraph.new(self, params.delete(:p), join_element).text
       elsif params[:words]
         Word.new(self, params.delete(:words), join_element).text
+      elsif params[:w]
+        Word.new(self, params.delete(:w), join_element).text
       else
         paragraphs.first
       end

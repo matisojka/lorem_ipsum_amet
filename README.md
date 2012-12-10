@@ -3,6 +3,8 @@
 
 **Lorem Ipsum Amet** is a gem that provides a simple yet powerful DSL for generating blind texts in your **Ruby** or **Ruby on Rails** projects.
 
+Lots of shortcuts have been incorporated in order to make the DSL concise yet expressive to avoid lots of typing.
+
 ## Installation
 
 Add it to your Gemfile:
@@ -37,6 +39,8 @@ Get 100 characters:
 
     LoremIpsum.lorem_ipsum(characters: 100)
 
+    LoremIpsum.lorem_ipsum(c: 100)
+
     LoremIpsum.c(100)
 
 #### Paragraph
@@ -45,6 +49,8 @@ Get 3 paragraphs:
 
     LoremIpsum.lorem_ipsum(paragraphs: 3)
 
+    LoremIpsum.lorem_ipsum(p: 3)
+
     LoremIpsum.c(3)
 
 #### Words
@@ -52,6 +58,8 @@ Get 3 paragraphs:
 Get 200 words:
 
     LoremIpsum.lorem_ipsum(words: 3)
+
+    LoremIpsum.lorem_ipsum(w: 3)
 
     LoremIpsum.w(200)
 
