@@ -1,7 +1,7 @@
 # Lorem Ipsum Amet - blind text generator
 ===========
 
-**Lorem Ipsum Amet** is a gem that provides a simple yet powerful DSL for generating blind texts in your Ruby or Ruby on Rails projects.
+**Lorem Ipsum Amet** is a gem that provides a simple yet powerful DSL for generating blind texts in your **Ruby** or **Ruby on Rails** projects.
 
 ## Installation
 
@@ -17,7 +17,7 @@ to install it.
 
 ## Usage
 
-The gem provides all of its features through the namespace LoremIpsum. If you are using it in a Rails project, refer to the next section.
+The gem provides all of its features through the namespace LoremIpsum. If you are using it in a **Rails** project, refer to the next section.
 
 ### Examples
 
