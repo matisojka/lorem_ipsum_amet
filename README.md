@@ -54,7 +54,7 @@ Get 3 paragraphs:
 
     LoremIpsum.lorem_ipsum(p: 3)
 
-    LoremIpsum.c(3)
+    LoremIpsum.p(3)
 
 #### Words
 
