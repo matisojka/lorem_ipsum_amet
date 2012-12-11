@@ -60,9 +60,9 @@ Get 3 paragraphs:
 
 Get 200 words:
 
-    LoremIpsum.lorem_ipsum(words: 3)
+    LoremIpsum.lorem_ipsum(words: 200)
 
-    LoremIpsum.lorem_ipsum(w: 3)
+    LoremIpsum.lorem_ipsum(w: 200)
 
     LoremIpsum.w(200)
 
