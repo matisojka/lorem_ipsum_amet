@@ -4,7 +4,7 @@
 [![Build Status](https://secure.travis-ci.org/yagooar/lorem_ipsum_amet.png)](http://travis-ci.org/yagooar/lorem_ipsum_amet)
 
 
-**Lorem Ipsum Amet** is a gem that provides a simple yet powerful DSL for generating blind texts in your **Ruby** or **Ruby on Rails** projects.
+**Lorem Ipsum Amet** is a gem that provides a simple yet powerful DSL for generating blind texts and placeholder images in your **Ruby** or **Ruby on Rails** projects.
 
 Lots of shortcuts have been incorporated in order to make the DSL concise yet expressive to avoid lots of typing.
 
@@ -33,6 +33,10 @@ The gem provides all of its features through the namespace LoremIpsum. If you ar
 or (alternatively)
 
     LoremIpsum.text
+
+#### Placeholder image
+
+    LoremIpsum.placeholder_image(300, 200)
 
 #### Characters
 
@@ -119,17 +123,19 @@ Very long:
 
 ### Rails integration
 
-If you are using this gem in a Rails project, you can access the helper method lorem_ipsum to get exactly the same functionality as described in the examples before.
+If you are using this gem in a Rails project, you can access the following helper methods to get exactly the same functionality as described in the examples before.
 
-The html option is activated by default.
+The html option for the text helper is activated by default.
 
 ERB:
 
     <%= text_area_tag 'placeholder', lorem_ipsum %>
+    <%= image_tag placeholder_image(300) %>
 
 HAML:
 
     %p= lorem_ipsum(paragraphs: 5)
+    %p= image_tag placeholder_image(200, 100)
 
 ## Bug reports and contributions
 

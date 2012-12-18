@@ -1,8 +1,12 @@
 # Changelog
 
-## 0.5.0 (Coming soon)
+## 0.6.0 (Coming soon)
 
 * Command line support
+
+## 0.5.0 (2012-12-18)
+
+* Added placeholder image support via placehold.it
 
 ## 0.4.0 (2012-12-10)
 
