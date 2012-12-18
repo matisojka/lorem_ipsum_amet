@@ -1,4 +1,4 @@
-# Lorem Ipsum Amet - blind text generator
+# Lorem Ipsum Amet - blind text && placeholder generator
 ===========
 
 [![Build Status](https://secure.travis-ci.org/yagooar/lorem_ipsum_amet.png)](http://travis-ci.org/yagooar/lorem_ipsum_amet)

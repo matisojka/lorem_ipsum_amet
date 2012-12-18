@@ -18,8 +18,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = 'lorem_ipsum_amet'
   gem.homepage = 'http://yagooar.github.com/lorem_ipsum_amet/'
   gem.license = 'MIT'
-  gem.summary = %Q{Lorem Ipsum generator for Ruby and Rails}
-  gem.description = %Q{Generate blind texts with tons of options in Ruby and Ruby on Rails}
+  gem.summary = %Q{Blind text & placeholder generator for Ruby and Rails}
+  gem.description = %Q{Generate blind texts and placeholder images with tons of options in Ruby, Ruby on Rails or Sinatra}
   gem.email = 'yagooar@gmail.com'
   gem.authors = ['Mateusz Sojka']
   gem.require_paths = ['lib']
