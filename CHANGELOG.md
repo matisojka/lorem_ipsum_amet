@@ -1,12 +1,16 @@
 # Changelog
 
-## 0.6.0 (Coming soon)
+## 0.7.0 (not scheduled yet)
 
-* Command line support
+* Waiting for your ideas!
+
+## 0.6.0 (2012-12-19)
+
+* Added Command line executable
 
 ## 0.5.0 (2012-12-18)
 
-* Added placeholder image support via placehold.it
+* Added placeholder image support via placehold.it (thanks to [benzimmer](https://github.com/benzimmer) for the idea!)
 
 ## 0.4.0 (2012-12-10)
 

@@ -4,21 +4,37 @@
 [![Build Status](https://secure.travis-ci.org/yagooar/lorem_ipsum_amet.png)](http://travis-ci.org/yagooar/lorem_ipsum_amet)
 
 
-**Lorem Ipsum Amet** is a gem that provides a simple yet powerful DSL for generating blind texts and placeholder images in your **Ruby** or **Ruby on Rails** projects.
+**Lorem Ipsum Amet** is a gem that provides a simple yet powerful DSL for generating blind texts and placeholder images. You can use it in your **Ruby** or **Ruby on Rails** projects or in as a command line tool with the provided executable.
 
 Lots of shortcuts have been incorporated in order to make the DSL concise yet expressive to avoid lots of typing.
 
 ## Installation
 
+### With Gemfile
+
 Add it to your Gemfile:
 
-    gem 'lorem-ipsum-amet'
+    gem 'lorem_ipsum_amet'
 
 And run:
 
     bundle install
 
 to install it.
+
+#### Without Gemfile
+
+In the command line:
+
+    gem install lorem_ipsum_amet
+
+And then require it in your project:
+
+    require 'lorem_ipsum_amet'
+
+#### Command line tool
+
+The command line tool is installed by default following the above steps.
 
 ## Usage
 
@@ -45,6 +61,10 @@ or (alternatively)
 #### Rails (HAML)
 
     = image_tag placeholder_image(200)
+
+#### Command line
+
+    lorem_ipsum --paragraphs 4
 
 
 ### More Examples
@@ -147,6 +167,15 @@ HAML:
 
     %p= lorem_ipsum(paragraphs: 5)
     %p= image_tag placeholder_image(200, 100)
+
+#### Command line tool
+
+The command line tool offers a thin wrapper over most of the text features.
+
+    lorem_ipsum --characters 100
+    lorem_ipsum -p 5 -j '<br />'
+    lorem_ipsum --words 10 --format upcase
+
 
 ## Bug reports and contributions
 
