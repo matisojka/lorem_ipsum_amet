@@ -7,6 +7,10 @@ module LoremIpsumAmet
       LoremIpsum.lorem_ipsum(cp, options)
     end
 
+    def placeholder_image(width, height = width)
+      LoremIpsum.placeholder_image(width, height)
+    end
+
   end
 end
 
