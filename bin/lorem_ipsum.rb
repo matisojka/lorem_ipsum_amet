@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+require 'lorem_ipsum_amet'
+require 'optparse'
+
+options = {}
+
+optparse = OptionParser.new do |opts|
+
+  options[:characters] = 100
+  opts.on('-c', '--characters [NUMBER]', 'Amount of characters') do |characters|
+    options[:characters] = characters.to_i
+  end
+
+  opts.on('-p', '--paragraphs [NUMBER]', 'Amount of paragraphs') do |paragraphs|
+    options.delete(:characters)
+    options[:paragraphs] = paragraphs.to_i
+  end
+
+  opts.on('-w', '--words [NUMBER]', 'Amount of words') do |words|
+    options.delete(:characters)
+    options[:words] = words.to_i
+  end
+
+  opts.on('-j', '--join [ELEMENT]', 'Custom join element') do |element|
+    options[:join] = element
+  end
+
+  opts.on('-f', '--format [FORMAT]', 'Text format (titlecase, upcase, downcase)') do |format|
+    options[:format] = format.to_sym
+  end
+
+  opts.on('-h', '--help', 'Display this screen') do
+    puts opts
+    exit
+  end
+
+end
+
+optparse.parse!
+
+puts LoremIpsum.lorem_ipsum(options)
+exit
+
