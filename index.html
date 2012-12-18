@@ -19,7 +19,7 @@
 
         <header>
           <h1>Lorem Ipsum Amet</h1>
-          <h2>Blind text generator with tons of configuration options</h2>
+          <h2>Blind text &amp; placeholder image generator with tons of configuration options</h2>
         </header>
 
         <section id="downloads" class="clearfix">
@@ -51,6 +51,8 @@
 
 <p><code>LoremIpsum.text</code> - alias for #lorem_ipsum</p>
 
+<p><code>LoremIpsum.placeholder_image(400, 300)</code> - placeholder image</p>
+
 <p><code>LoremIpsum.lorem_ipsum(50)</code> - 50 characters</p>
 
 <p><code>LoremIpsum.lorem_ipsum(paragraphs: 4)</code> - 4 paragraphs</p>
@@ -69,15 +71,17 @@
 
 <h2>Rails</h2>
 
-<p>Just use "lorem_ipsum" in your views as in the examples above!</p>
+<p>Just use "lorem_ipsum" &amp; "placeholder_image" in your views as in the examples above!</p>
 
 <h3>ERB</h3>
 
-<p><code>&lt;%= text_area_tag 'placeholder', lorem_ipsum %&gt;</code></p>
+<p><code>&lt;%= text_area_tag 'placeholder', lorem_ipsum %&gt;</code>
+<code>&lt;%= image_tag placeholder_image(200, 300) %&gt;</code></p>
 
 <h3>HAML</h3>
 
-<p><code>%p= lorem_ipsum(paragraphs: 5)</code></p>
+<p><code>%p= lorem_ipsum(paragraphs: 5)</code>
+<code>= image_tag placeholder_image(250)</code></p>
         </section>
 
         <footer>
