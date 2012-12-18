@@ -4,6 +4,10 @@
 
 * Waiting for your ideas!
 
+## 0.6.1 (2012-12-19)
+
+* Fix for executable name
+
 ## 0.6.0 (2012-12-19)
 
 * Added Command line executable
