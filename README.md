@@ -24,9 +24,9 @@ to install it.
 
 The gem provides all of its features through the namespace LoremIpsum. If you are using it in a **Rails** project, refer to the next section.
 
-### Examples
+### Quick and dirty!
 
-#### Get some lorem ipsum!
+#### Text
 
     LoremIpsum.lorem_ipsum
 
@@ -34,9 +34,20 @@ or (alternatively)
 
     LoremIpsum.text
 
+#### Rails (ERB)
+
+    <%= lorem_ipsum(300) %>
+
 #### Placeholder image
 
     LoremIpsum.placeholder_image(300, 200)
+
+#### Rails (HAML)
+
+    = image_tag placeholder_image(200)
+
+
+### More Examples
 
 #### Characters
 
