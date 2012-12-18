@@ -3,6 +3,7 @@ GEM
   specs:
     coderay (1.0.8)
     diff-lcs (1.1.3)
+    dimensions (1.2.0)
     git (1.2.5)
     jeweler (1.8.4)
       bundler (~> 1.0)
@@ -38,6 +39,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (>= 1.1.3)
+  dimensions
   jeweler (~> 1.8.4)
   pry
   rdoc (~> 3.12)

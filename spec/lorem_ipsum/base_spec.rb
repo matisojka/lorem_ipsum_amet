@@ -241,4 +241,13 @@ describe LoremIpsumAmet::Base do
 
   end
 
+  describe '#placeholder_image(:width, :height)' do
+
+    it 'responds to #placeholder_image' do
+
+      expect(subject).to respond_to(:placeholder_image)
+    end
+
+  end
+
 end

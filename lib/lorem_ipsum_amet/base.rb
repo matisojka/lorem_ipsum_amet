@@ -1,5 +1,6 @@
 module LoremIpsumAmet
   class Base
+    include Image
 
     def params
       @params ||= {}
