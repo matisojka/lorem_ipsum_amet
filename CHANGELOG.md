@@ -3,6 +3,9 @@
 ## 0.7.0 (not scheduled yet)
 
 * Waiting for your ideas!
+* Random text beginning
+* Different texts
+* Different image types (like lorempixum)
 
 ## 0.6.1 (2012-12-19)
 
