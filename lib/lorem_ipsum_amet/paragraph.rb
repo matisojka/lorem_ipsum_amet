@@ -11,6 +11,10 @@ module LoremIpsumAmet
       joined_text
     end
 
+    def random
+      random_joined_text
+    end
+
     private
 
     def join_element
@@ -25,8 +29,21 @@ module LoremIpsumAmet
       (@paragraphs / @base.paragraphs.size) + 1
     end
 
+    def random_joined_text
+      random = get_random(all_paragraphs.size)
+      ([all_paragraphs] * (times_to_repeat + 1)).flatten[random...@paragraphs + random].join(join_element)
+    end
+
+    def get_random(size)
+      rand(size)
+    end
+
     def joined_text
-      ([@base.paragraphs] * times_to_repeat).flatten[0...@paragraphs].join(join_element)
+      ([all_paragraphs] * times_to_repeat).flatten[0...@paragraphs].join(join_element)
+    end
+
+    def all_paragraphs
+      @base.paragraphs
     end
 
   end

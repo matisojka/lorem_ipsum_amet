@@ -69,6 +69,11 @@ module LoremIpsumAmet
       lorem_ipsum(words: words, join: join_element)
     end
 
+    def random(options = {})
+      _paragraphs = options.delete(:paragraphs) || 1
+      Paragraph.new(self, _paragraphs, options[:join_element]).random
+    end
+
     private
 
     def formatted_text

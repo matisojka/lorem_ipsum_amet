@@ -250,4 +250,18 @@ describe LoremIpsumAmet::Base do
 
   end
 
+  describe '#random(:paragraphs)' do
+
+    it 'returns the given number of paragraphs beginning at a random one' do
+      subject.stub(:get_random).and_return(0, 5)
+      paragraphs1 = subject.random(paragraphs: 4)
+      paragraphs2 = subject.random
+
+      expect(paragraphs1).not_to eq(paragraphs2)
+      expect(paragraphs1.length).to be > paragraphs2.size
+      expect(paragraphs1.split("\n").size).to eq(4)
+      expect(paragraphs2.split("\n").size).to eq(1)
+    end
+  end
+
 end

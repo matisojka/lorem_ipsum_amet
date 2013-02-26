@@ -50,6 +50,11 @@ or (alternatively)
 
     LoremIpsum.text
 
+### Random text beginning
+
+    LoremIpsum.random
+    LoremIpsum.random(paragraphs: 4)
+
 #### Rails (ERB)
 
     <%= lorem_ipsum(300) %>
@@ -65,6 +70,7 @@ or (alternatively)
 #### Command line
 
     lorem_ipsum --paragraphs 4
+    lorem_ipsum -r 2 # two random paragraphs
 
 
 ### More Examples
@@ -175,6 +181,15 @@ The command line tool offers a thin wrapper over most of the text features.
     lorem_ipsum --characters 100
     lorem_ipsum -p 5 -j '<br />'
     lorem_ipsum --words 10 --format upcase
+
+    Usage: lorem_ipsum [options]
+        -c, --characters [NUMBER]        Amount of characters
+        -p, --paragraphs [NUMBER]        Amount of paragraphs
+        -w, --words [NUMBER]             Amount of words
+        -j, --join [ELEMENT]             Custom join element
+        -f, --format [FORMAT]            Text format (titlecase, upcase, downcase)
+        -r, --random [NUMBER]            Amount of paragraphs with random beginning
+        -h, --help                       Display this screen
 
 
 ## Bug reports and contributions
