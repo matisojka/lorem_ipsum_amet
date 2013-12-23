@@ -4,7 +4,7 @@
 [![Build Status](https://secure.travis-ci.org/yagooar/lorem_ipsum_amet.png)](http://travis-ci.org/yagooar/lorem_ipsum_amet)
 
 
-**Lorem Ipsum Amet** is a gem that provides a simple yet powerful DSL for generating blind texts and placeholder images. You can use it in your **Ruby** or **Ruby on Rails** projects or in as a command line tool with the provided executable.
+**Lorem Ipsum Amet** is a gem that provides a simple yet powerful DSL for generating blind texts and placeholder images. You can use it in your **Ruby** or **Ruby on Rails** projects or as a command line tool with the provided executable.
 
 Lots of shortcuts have been incorporated in order to make the DSL concise yet expressive to avoid lots of typing.
 
