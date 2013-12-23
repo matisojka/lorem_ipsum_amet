@@ -1,6 +1,6 @@
 require_relative 'view_helpers'
 
-module LoremIpsumAmet
+module LoremIpsum
   class Railtie < Rails::Railtie
 
     initializer 'lorem_ipsum_amet.view_helpers' do

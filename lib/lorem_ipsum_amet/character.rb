@@ -1,4 +1,4 @@
-module LoremIpsumAmet
+module LoremIpsum
   class Character
 
     def initialize(base, characters, join_element)

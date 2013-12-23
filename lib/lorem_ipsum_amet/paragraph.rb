@@ -1,4 +1,4 @@
-module LoremIpsumAmet
+module LoremIpsum
   class Paragraph
 
     def initialize(base, paragraphs, join_element)

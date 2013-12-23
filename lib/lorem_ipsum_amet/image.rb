@@ -1,4 +1,4 @@
-module LoremIpsumAmet
+module LoremIpsum
   module Image
 
     def placeholder_image(width, height = width)

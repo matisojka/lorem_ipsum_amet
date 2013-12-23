@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe LoremIpsumAmet::Image do
+describe LoremIpsum::Image do
 
-  subject { Object.new.extend(LoremIpsumAmet::Image) }
+  subject { Object.new.extend(LoremIpsum::Image) }
 
   describe '#placeholder_image(:width, :height)' do
 

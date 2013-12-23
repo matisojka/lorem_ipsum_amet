@@ -1,4 +1,4 @@
-module LoremIpsumAmet
+module LoremIpsum
   class Word
 
     def initialize(base, words, join_element)

@@ -1,4 +1,4 @@
-module LoremIpsumAmet
+module LoremIpsum
   module ViewHelpers
 
     def lorem_ipsum(cp = nil, options = {})

@@ -1,4 +1,4 @@
-module LoremIpsumAmet
+module LoremIpsum
   class Text
 
     def self.raw
