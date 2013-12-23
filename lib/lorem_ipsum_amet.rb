@@ -5,7 +5,8 @@ require_relative 'lorem_ipsum_amet/word'
 require_relative 'lorem_ipsum_amet/image'
 require_relative 'lorem_ipsum_amet/base'
 
-LoremIpsum = LoremIpsumAmet::Base.new
+class LoremIpsum < LoremIpsumAmet::Base
+end
 
 require_relative 'lorem_ipsum_amet/rails/railtie' if defined?(Rails::Railtie)
 
