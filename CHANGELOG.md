@@ -1,11 +1,5 @@
 # Changelog
 
-## 0.7.0 (not scheduled yet)
-
-* Waiting for your ideas!
-* Different texts
-* Different image types (like lorempixum)
-
 ## 0.6.2 (2013-02-26)
 
 * Random text beginning
